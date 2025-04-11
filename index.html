@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Startup Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .popup-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-white shadow">
+    <div class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-700">StartUpX</h1>
+      <nav class="space-x-4">
+        <a href="index.html" class="text-blue-600 font-semibold">Home</a>
+        <a href="about.html" class="hover:text-blue-500">About</a>
+        <a href="services.html" class="hover:text-blue-500">Services</a>
+        <a href="faq.html" class="hover:text-blue-500">FAQ</a>
+        <a href="contact.html" class="hover:text-blue-500">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="bg-blue-100 py-16 text-center">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-4">Innovate. Build. Scale.</h2>
+      <p class="text-lg">StartUpX empowers your vision with cutting-edge tech solutions and a dynamic team behind the scenes.</p>
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" alt="Startup" class="rounded-xl mt-6 shadow-lg mx-auto w-full max-w-md">
+    </div>
+  </section>
+
+  <section class="py-16 px-4 max-w-6xl mx-auto">
+    <h3 class="text-3xl font-semibold text-center mb-10">Our Big Ideas</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h4 class="text-xl font-bold mb-2">Smart Automation</h4>
+        <p>Automate your business operations with intelligent workflows and AI-powered insights.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h4 class="text-xl font-bold mb-2">Cloud Integration</h4>
+        <p>Seamlessly integrate your tools and services into the cloud for ultimate scalability.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h4 class="text-xl font-bold mb-2">Data-Driven Design</h4>
+        <p>Leverage user data to create optimized, delightful product experiences.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-white text-center py-6">
+    <p>&copy; 2025 StartUpX. All rights reserved.</p>
+  </footer>
+
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <p id="popup-message">Default message</p>
+      <button onclick="hidePopup()" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function showPopup(message) {
+      document.getElementById('popup-message').innerText = message;
+      document.getElementById('popup').classList.remove('hidden');
+      document.getElementById('popup').classList.add('flex');
+    }
+    function hidePopup() {
+      document.getElementById('popup').classList.remove('flex');
+      document.getElementById('popup').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
